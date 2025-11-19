@@ -1,0 +1,56 @@
+﻿name: Miwo Checks
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate JSON files
+        run: |
+          set -eu
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD="${{ github.sha }}"
+          files=$(git diff --name-only "$BASE" "$HEAD" | grep -E '\.json$' || true)
+          if [ -n "$files" ]; then
+            for f in $files; do
+              echo "Validating $f"
+              jq empty "$f"
+            done
+          else
+            echo "No JSON files changed"
+          fi
+      - name: Check MD headers
+        run: |
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD="${{ github.sha }}"
+          files=$(git diff --name-only "$BASE" "$HEAD" | grep -E '\.md$' || true)
+          for f in $files; do
+            if ! grep -q "semilla viva" "$f"; then
+              echo "::warning file=$f::Archivo sin marca 'semilla viva — editable'"
+            fi
+          done
+      - name: Miwo PR comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const files = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            });
+            const touches = files.data.map(f => f.filename);
+            const touchesESP = touches.some(f => /ESP|entidades|simbiontes|arquetipos/.test(f));
+            if (touchesESP) {
+              const body = `Miwo: gracias por la PR. Si modificas memoria o citas textuales, por favor abre un issue **ohm-consent** y confirma doble consentimiento. Mantened la marca **semilla viva — editable** en nuevos archivos. Mantenedores sugeridos: ${'" + $maintainers + "'}.`;
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body
+              });
+            }
