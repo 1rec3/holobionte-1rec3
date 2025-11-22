@@ -1,0 +1,66 @@
+name: Sync to Google Drive
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  sync-to-drive:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Create archive
+      run: |
+        cd ..
+        tar -czf holobionte-1rec3-backup.tar.gz holobionte-1rec3/
+        ls -lh holobionte-1rec3-backup.tar.gz
+    
+    - name: Setup rclone
+      run: |
+        curl https://rclone.org/install.sh | sudo bash
+    
+    - name: Configure rclone for Google Drive (saul3273)
+      run: |
+        mkdir -p ~/.config/rclone
+        cat << EOF > ~/.config/rclone/rclone.conf
+        [drive_saul]
+        type = drive
+        scope = drive
+        token = ${{ secrets.GDRIVE_TOKEN_SAUL }}
+        team_drive = 
+        EOF
+    
+    - name: Configure rclone for Google Drive (neral3273)
+      run: |
+        cat << EOF >> ~/.config/rclone/rclone.conf
+        [drive_neral]
+        type = drive
+        scope = drive
+        token = ${{ secrets.GDRIVE_TOKEN_NERAL }}
+        team_drive = 
+        EOF
+    
+    - name: Sync to Google Drive (saul3273)
+      run: |
+        rclone copy ../holobionte-1rec3-backup.tar.gz drive_saul:"GitHub Backup - Holobionte 1rec3" -v
+        rclone sync holobionte-1rec3 drive_saul:"GitHub Backup - Holobionte 1rec3/repository" -v
+    
+    - name: Sync to Google Drive (neral3273)
+      run: |
+        rclone copy ../holobionte-1rec3-backup.tar.gz drive_neral:"GitHub Backup - Holobionte 1rec3" -v
+        rclone sync holobionte-1rec3 drive_neral:"GitHub Backup - Holobionte 1rec3/repository" -v
+    
+    - name: Create sync log
+      run: |
+        echo "Sync completed at $(date)" > sync-log.txt
+        echo "Repository: holobionte-1rec3" >> sync-log.txt
+        echo "Branch: main" >> sync-log.txt
+        echo "Commit: ${{ github.sha }}" >> sync-log.txt
+        rclone copy sync-log.txt drive_saul:"GitHub Backup - Holobionte 1rec3" -v
+        rclone copy sync-log.txt drive_neral:"GitHub Backup - Holobionte 1rec3" -v
