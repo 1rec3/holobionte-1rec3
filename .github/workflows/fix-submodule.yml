@@ -1,0 +1,38 @@
+name: Fix Broken Submodule
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix-submodule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Remove broken submodule
+        run: |
+          # Remove the submodule entry from git index
+          git rm --cached holobionte-1rec3 || true
+          
+          # Remove the submodule directory if it exists
+          rm -rf holobionte-1rec3
+          
+          # Remove from .git/modules if exists
+          rm -rf .git/modules/holobionte-1rec3
+      
+      - name: Commit changes
+        run: |
+          git add -A
+          git commit -m "Fix: Remove broken holobionte-1rec3 submodule" || echo "No changes to commit"
+      
+      - name: Push changes
+        run: |
+          git push origin main
