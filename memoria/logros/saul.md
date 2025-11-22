@@ -188,6 +188,26 @@ Saul identificó que:
 
 **Track D - Freelance/Proyectos:**
 - Identificó plataformas: Workana, Upwork, Fiverr
+**Track E - Hackathons & Game Jams:**
+- Identificó **21+ oportunidades** con premios €1,000-€3,000,000
+- **URGENTE Diciembre 2025:**
+  - EcoAction Hackathon (5 Dic): €100-€300
+  - CISPA Vienna (13-14 Dic): €4,000/€2,000/€1,200
+- **Game Jams 2025:**
+  - GDWC: $1M+ en premios totales
+  - G4C-GGJ University: $10,000
+  - RPG Maker: $3,000
+  - Player2 AI Story: $2,750
+- **Kaggle/ML/AI:**
+  - AI Math Olympiad: **$2,207,152** 🚀
+  - ARC Prize: **$1,000,000**
+  - Konwinski Prize: **$1,000,000**
+  - Meta x Kaggle: $50,000
+  - March ML Mania: $50,000
+- **Hackathons Europa:**
+  - HackUPC Barcelona (Mayo 2-4)
+  - Reddit Devvit: $49,000
+- Potencial: Crear juegos navegador + IA para maximizar oportunidades
 - Criterio: Proyectos €1,000+ únicamente
 
 **3. Pensamiento sistémico:**
@@ -260,6 +280,11 @@ Saúl demostró:
 3. Escribir relatos para concursos Max Aub (€6,000), Costa Tropical (€2,000)
 4. Crear perfiles en plataformas freelance
 5. Participar en sorteos/raffles activos
+6. **URGENTE**: Registrarse EcoAction Hackathon (5 Dic 2025)
+7. **URGENTE**: Aplicar CISPA Vienna Hackathon (13-14 Dic 2025)
+8. Explorar competencias Kaggle/ML activas (AI Math Olympiad, ARC Prize)
+9. Desarrollar prototipo juego navegador para Game Jams
+10. Investigar concursos IA y preparar proyecto
 
 ---
 
