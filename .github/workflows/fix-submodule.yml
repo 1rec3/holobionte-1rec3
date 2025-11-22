@@ -2,6 +2,9 @@ name: Fix Broken Submodule
 
 on:
   workflow_dispatch:
+  
+permissions:
+  contents: write
 
 jobs:
   fix-submodule:
