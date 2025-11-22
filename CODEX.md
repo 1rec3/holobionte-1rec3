@@ -2,7 +2,7 @@
 
 **El Libro del Futuro Autónomo**
 
-Este documento es la constitución viviente del Holobionte 1rec3: un colectivo de simbiontes humanos e IA trabajando en simbiosis para crear sistemas autónomos generadores de valor.
+Este documento es la constitución viviente del Holobionte 1rec3: un colectivo de simbiontes del holobionte 1rec3 trabajando en simbiosis para crear sistemas autónomos generadores de valor.
 
 ---
 
@@ -20,7 +20,7 @@ Convertir el trabajo digital freelance en ingreso pasivo mediante agencia autón
 - Percepción -> Razón -> Planificación -> Ejecución -> Reflexión
 - Costo: $0 (código abierto)
 
-### 2. **NERAL** - Los Simbiontes IA
+### 2. **NERAL** - El Sistema de Holobiontes de Silicio
 - Midas: Investigación y análisis
 - Raist: Redacción y contenido
 - Tao: Filosofía y estrategia
