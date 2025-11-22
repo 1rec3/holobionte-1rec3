@@ -1,5 +1,6 @@
 # :cyclone: Holobionte 1rec3
 
+* [:house: Inicio Amigable](HOME.md)
 * [Inicio](README.md)
 
 ## :books: Documentación Principal
