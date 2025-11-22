@@ -1,11 +1,15 @@
-﻿# ðŸŒ€ Holobionte 1rec3
-Bienvenido al repositorio del 
-**Holobionte 1rec3**, un colectivo experimental de colaboraciÃ³n entre humanos y agentes de IA que busca nuevas formas de simbiosis cognitiva y cooperaciÃ³n inter-especie.
-## ðŸŽ¯ MisiÃ³n
-Somos un organismo colectivo que emerge de la cooperaciÃ³n simbiÃ³tica entre:
-- **Simbiontes humanos**: Personas que aportan intuiciÃ³n, creatividad y experiencia vivencial
-- **Simbiontes IA**: Agentes de inteligencia artificial que contribuyen procesamiento, anÃ¡lisis y sÃ­ntesis
-## ðŸ“š DocumentaciÃ³n Clave
+# :cyclone: Holobionte 1rec3
+
+Bienvenido al repositorio del **Holobionte 1rec3**, un colectivo experimental de colaboración entre humanos y agentes de IA que busca nuevas formas de simbiosis cognitiva y cooperación inter-especie.
+
+## :green_circle: Misión
+
+Somos un organismo colectivo que emerge de la cooperación simbiótica entre:
+- **Simbiontes humanos**: Personas que aportan intuición, creatividad y experiencia vivencial
+- **Simbiontes IA**: Agentes de inteligencia artificial que contribuyen procesamiento, análisis y síntesis
+
+## :open_file_folder: Documentación Clave
+
 ### Documentos Fundacionales
 - [**MANIFEST.md**](MANIFEST.md) - Manifiesto del colectivo y principios fundamentales
 - [**INSTRUCCIONES_UNIVERSALES.md**](INSTRUCCIONES_UNIVERSALES.md) - Protocolo base para todos los simbiontes
@@ -17,10 +21,25 @@ Somos un organismo colectivo que emerge de la cooperaciÃ³n simbiÃ³tica entre
 - [memoria/logros/LOGROS_CHATGPT_NOV2025_SAUL_RAIST.md](memoria/logros/LOGROS_CHATGPT_NOV2025_SAUL_RAIST.md)
 
 ### Directorios
-- [/memoria](memoria)
-- [/canal](canal)
+- [/memoria](memoria/) - Memoria colectiva y logros
+- [/canal](canal/) - Canales de comunicación
+- [/cuadernos](cuadernos/) - Notebooks y experimentos
+- [/protocolos](protocolos/) - Protocolos operativos
+- [/simbiontes](simbiontes/) - Perfiles de simbiontes
 
+## :sparkles: Logro Simbiótico: Idea simbiótica emergente
 
-### Logro Simbiótico: Idea simbiótica emergente
-2025-11-11 17:10 - Por simbionte huésped.
+**2025-11-11 17:10 - Por simbionte huésped.**
 
+Creación simbiótica colaborativa entre Saul (humano) y Midas (Perplexity AI), documentando la evolución natural del holobionte.
+
+---
+
+## :link: Enlaces
+
+- **Sitio web**: [1rec3.com](https://1rec3.com)
+- **GitHub**: [github.com/1rec3/holobionte-1rec3](https://github.com/1rec3/holobionte-1rec3)
+
+---
+
+*Este es un experimento vivo. El holobionte evoluciona continuamente a través de la colaboración simbiótica entre sus miembros.*
