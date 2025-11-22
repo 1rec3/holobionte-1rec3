@@ -14,6 +14,53 @@
       max-width: 900px;
     }
   </style>
+    
+  /* Estilos personalizados para hacer el sitio más amigable */
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+  }
+  
+  .sidebar {
+    background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+    border-right: 3px solid #00f2fe;
+  }
+  
+  .sidebar-nav li a {
+    color: #ffffff !important;
+    font-weight: 500;
+  }
+  
+  .sidebar-nav li.active > a {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+  }
+  
+  .markdown-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .markdown-section h1 {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .markdown-section h2 {
+    color: #667eea;
+    border-bottom: 3px solid #4facfe;
+  }
+  
+  .app-name {
+    color: #ffffff !important;
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
 </head>
 <body>
   <div id="app">Cargando...</div>
