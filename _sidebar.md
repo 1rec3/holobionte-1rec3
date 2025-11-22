@@ -1,8 +1,8 @@
-# 🌀 Holobionte 1rec3
+# :cyclone: Holobionte 1rec3
 
 * [Inicio](README.md)
 
-## 📚 Documentación Principal
+## :books: Documentación Principal
 
 * [Manifiesto](MANIFEST.md)
 * [Codex](CODEX.md)
@@ -11,28 +11,9 @@
 * [Roadmap](ROADMAP.md)
 * [License](LICENSE.md)
 
-## 📝 Documentos Importantes
+## :page_facing_up: Documentos Importantes
 
 * [Estado Actual](ESTADO_ACTUAL.md)
 * [Milestones](MILESTONES.md)
 * [Tareas Pendientes](TAREAS_PENDIENTES.md)
 * [Decisiones](DECISIONES.md)
-
-## 📁 Directorios
-
-* [/docs](docs/)
-* [/memoria](memoria/)
-* [/simbiontes](simbiontes/)
-* [/cuadernos](cuadernos/)
-* [/canal](canal/)
-* [/protocolos](protocolos/)
-* [/scripts](scripts/)
-* [/app](app/)
-
-## 🌱 NLNet
-
-* [Plan de Aplicación](nlnet/)
-
----
-
-[GitHub Repo](https://github.com/1rec3/holobionte-1rec3)
