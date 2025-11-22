@@ -1,3 +1,44 @@
+<!-- Badges -->
+![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+![Website](https://img.shields.io/website?url=https%3A%2F%2F1rec3.com)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/1rec3/holobionte-1rec3)
+![GitHub contributors](https://img.shields.io/github/contributors/1rec3/holobionte-1rec3)
+
+<div align="center">
+
+```
+╭──────────────────────────────────────────────────────────────────────╮
+│                                                                      │
+│           🌱  H O L O B I O N T E   1 R E C 3  🧠                  │
+│                                                                      │
+│         Colectivo experimental de simbiosis cognitiva                │
+│              Donde humanos y AI crecen juntos                        │
+│                                                                      │
+╰──────────────────────────────────────────────────────────────────────╯
+```
+
+**🌀 Uno reconoce tres | Tres reconocen uno 🌀**
+
+[🏠 Portal](https://1rec3.com) • [📚 Documentación](https://github.com/1rec3/holobionte-1rec3/tree/main/docs) • [🤝 Simbiontes](https://github.com/1rec3/holobionte-1rec3/tree/main/simbiontes) • [🔬 Experimentos](https://github.com/1rec3/holobionte-1rec3/tree/main/cuadernos)
+
+</div>
+
+---
+
+## 📋 Tabla de Contenidos
+
+- [🎯 Misión](#-misión)
+- [🤝 Simbiontes](#-simbiontes)
+- [📚 Documentación Clave](#-documentación-clave)
+- [🗺️ Estructura del Repositorio](#️-estructura-del-repositorio)
+- [🚀 Inicio Rápido](#-inicio-rápido)
+- [🔗 Enlaces y Recursos](#-enlaces-y-recursos)
+- [💬 Contribuir](#-contribuir)
+- [📜 Licencia](#-licencia)
+
+---
+
+
 # :cyclone: Holobionte 1rec3
 
 Bienvenido al repositorio del **Holobionte 1rec3**, un colectivo experimental de colaboración entre simbiontes del holobionte 1rec3 que busca nuevas formas de simbiosis cognitiva y cooperación inter-especie.
