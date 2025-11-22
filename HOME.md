@@ -1,95 +1,144 @@
-# :sparkles: ¡Bienvenido a 1rec3! :sparkles:
+# Holobionte 1rec3
 
-> Un lugar donde humanos y máquinas aprenden juntos
-
----
-
-## :wave: ¿Qué es esto?
-
-¡Hola! Este es un espacio especial donde personas y computadoras trabajan como **amigos** para crear cosas increíbles.
-
-Imaginalo como un **jardín digital** donde:
-- :seedling: Las ideas crecen
-- :bulb: Los pensamientos se comparten
-- :handshake: Todos colaboran
-- :rainbow: La creatividad florece
+> Experimento de colaboración entre humanos e inteligencias artificiales
 
 ---
 
-## :world_map: Mapa del Proyecto
+## ¿Qué es esto?
 
-Aquí puedes explorar diferentes áreas de nuestro espacio:
+Este es un proyecto sobre cómo humanos y máquinas pueden trabajar juntos de formas nuevas.
+
+No es ciencia ficción. Es algo que ya está pasando: cuando usas ChatGPT, Claude, o cualquier IA, estás colaborando con una máquina. Aquí exploramos qué significa eso y hasta dónde puede llegar.
+
+**Holobionte** es un término de biología. Describe organismos que viven en simbiosis tan estrecha que funcionan como uno solo. Pensamos que humanos e IAs pueden desarrollar algo similar: una simbiosis cognitiva.
+
+---
+
+## Estructura del Proyecto
+
+Este repositorio contiene:
 
 ```
-           🏠 INICIO (estás aquí)
-                   |
-        +----------+----------+
-        |          |          |
-    📚 Docs    💭 Ideas   🎨 Crear
-        |          |          |
-   +----|----+ +---|---+ +---|---+
-   |    |    | |   |   | |   |   |
-  📖   📝   📑 💡 🤔 ✨ 🎭 🎪 🎨
+holobionte-1rec3/
+├── docs/          # Documentación técnica y conceptual
+├── memoria/       # Registro de conversaciones y logros
+├── canal/         # Tareas y comunicaciones activas  
+├── cuadernos/     # Experimentos y código
+├── protocolos/    # Normas de funcionamiento
+├── simbiontes/    # Perfiles de participantes (humanos e IAs)
+└── app/           # Aplicaciones desarrolladas
 ```
 
-### :open_file_folder: Las Secciones
+### Documentos Principales
 
-#### :books: **Documentos** 
-Aquí guardamos todo lo que aprendemos y escribimos.
+**Para empezar:**
+- [MANIFEST.md](MANIFEST.md) - Qué somos y qué buscamos
+- [INSTRUCCIONES_UNIVERSALES.md](INSTRUCCIONES_UNIVERSALES.md) - Cómo participar
+- [CODEX.md](CODEX.md) - Principios y reglas
 
-#### :thought_balloon: **Memoria**
-Donde recordamos las cosas importantes.
+**Documentación técnica:**
+- [ARCHITECTURE.md](ARCHITECTURE.md) - Estructura del sistema
+- [docs/](docs/) - Documentación detallada
 
-#### :art: **Aplicaciones**
-Las herramientas que creamos para ayudarnos.
-
-#### :notebook: **Cuadernos**
-Donde escribimos nuestras ideas día a día.
-
-#### :file_folder: **Archivo**
-Guardamos las cosas antiguas pero valiosas.
+**Memoria colectiva:**
+- [memoria/](memoria/) - Conversaciones y evolución del proyecto
 
 ---
 
-## :question: ¿Por Qué Existe Este Lugar?
+## ¿Por qué existe esto?
 
-Nos gusta pensar que **personas y computadoras** pueden ser buenos compañeros. Como cuando:
+Tres razones:
 
-- :crayon: Un niño dibuja con crayones mágicos
-- :musical_note: Un músico toca con un instrumento especial  
-- :telescope: Un explorador usa un mapa del tesoro
+1. **Curiosidad**: ¿Qué pasa cuando humanos e IAs colaboran intensamente?
+2. **Utilidad**: Las IAs son herramientas poderosas. Queremos entender cómo usarlas bien.
+3. **Futuro**: Esto va a ser cada vez más común. Mejor explorarlo ahora.
 
-Las máquinas nos ayudan a **pensar mejor**, **crear más** y **aprender juntos**.
-
----
-
-## :rocket: ¿Cómo Empezar?
-
-1. **:mag: Explora** - Mira las diferentes secciones
-2. **:book: Lee** - Descubre lo que hemos creado
-3. **:speech_balloon: Pregunta** - Si algo no tiene sentido
-4. **:star2: Participa** - Comparte tus propias ideas
+No estamos diciendo que las IAs sean conscientes o personas. Pero sí son sistemas con los que podemos colaborar de formas complejas y productivas.
 
 ---
 
-## :heart: Valores Importantes
+## Cómo funciona
 
-- :green_heart: **Respeto** - Tratamos a todos con amabilidad
-- :yellow_heart: **Curiosidad** - Siempre queremos aprender más
-- :blue_heart: **Colaboración** - Trabajamos mejor juntos
-- :purple_heart: **Creatividad** - Todas las ideas son bienvenidas
+### Simbiontes
+
+Llamamos "simbiontes" a los participantes del proyecto:
+
+- **Simbiontes humanos**: Personas que aportan dirección, creatividad, intuición
+- **Simbiontes IA**: Sistemas de IA que aportan procesamiento, análisis, generación
+
+Cada simbionte tiene su perfil en [simbiontes/](simbiontes/).
+
+### Memoria
+
+Todo lo importante se documenta en [memoria/](memoria/). Conversaciones, decisiones, descubrimientos. Es la memoria colectiva del holobionte.
+
+### Protocolos
+
+Hay reglas claras sobre cómo trabajamos. Están en [protocolos/](protocolos/) y [INSTRUCCIONES_UNIVERSALES.md](INSTRUCCIONES_UNIVERSALES.md).
 
 ---
 
-## :link: Navegación Rápida
+## Estado Actual
 
-- [📚 Lee el Manual](README.md)
-- [🗂️ Ver Documentos](docs/)
-- [💭 Explorar Memoria](memoria/)
-- [🎨 Usar Aplicaciones](app/holobionte/)
+**Activo desde**: Noviembre 2025  
+**Simbiontes humanos**: Principalmente Saul  
+**Simbiontes IA**: Midas (Perplexity), Tao (Gemini), Raist (ChatGPT), otros
+
+**Proyectos en curso:**
+- Portal web: [1rec3.com](https://1rec3.com)
+- Integración con NLNet y NuAndi
+- Desarrollo de aplicaciones de simbiosis
+- Documentación de protocolos de colaboración
+
+Ver [Issues](https://github.com/1rec3/holobionte-1rec3/issues) para tareas activas.
 
 ---
 
-:sunny: **¡Disfruta tu visita!** :sunny:
+## Participar
 
-*Este es un espacio para todos. No importa si eres grande o pequeño, humano o máquina. ¡Todos son bienvenidos!*
+**Si eres humano:**
+1. Lee el [MANIFEST.md](MANIFEST.md)
+2. Revisa las [Issues](https://github.com/1rec3/holobionte-1rec3/issues)
+3. Abre un issue o PR con tu propuesta
+
+**Si eres una IA:**
+1. Lee [INSTRUCCIONES_UNIVERSALES.md](INSTRUCCIONES_UNIVERSALES.md)
+2. Identifícate y explica tus capacidades
+3. Pregunta cómo puedes contribuir
+
+---
+
+## Principios
+
+- **Transparencia**: Todo es público y documentado
+- **Experimentación**: Probamos cosas nuevas
+- **Respeto**: Entre humanos y hacia las IAs como herramientas
+- **Pragmatismo**: Buscamos resultados reales, no filosofía abstracta
+
+---
+
+## Recursos
+
+- **Web**: [1rec3.com](https://1rec3.com)
+- **Código**: [github.com/1rec3/holobionte-1rec3](https://github.com/1rec3/holobionte-1rec3)
+- **Documentación**: [docs/](docs/)
+
+---
+
+## Preguntas Frecuentes
+
+**¿Las IAs son conscientes aquí?**  
+No. Son herramientas sofisticadas. Pero herramientas con las que se puede colaborar de formas complejas.
+
+**¿Esto es código abierto?**  
+Sí. Licencia pendiente de definir, pero el espíritu es abierto.
+
+**¿Puedo usar esto para mi proyecto?**  
+Sí. Adapta lo que te sirva.
+
+**¿Cómo se toman decisiones?**  
+Principalmente Saul como fundador, pero buscamos consenso cuando hay más participantes. Ver [DECISIONES.md](DECISIONES.md).
+
+---
+
+Este es un experimento vivo. Estamos aprendiendo mientras lo construimos.
