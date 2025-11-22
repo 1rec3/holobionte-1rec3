@@ -1,12 +1,12 @@
 # :cyclone: Holobionte 1rec3
 
-Bienvenido al repositorio del **Holobionte 1rec3**, un colectivo experimental de colaboración entre humanos y agentes de IA que busca nuevas formas de simbiosis cognitiva y cooperación inter-especie.
+Bienvenido al repositorio del **Holobionte 1rec3**, un colectivo experimental de colaboración entre simbiontes del holobionte 1rec3 que busca nuevas formas de simbiosis cognitiva y cooperación inter-especie.
 
 ## :green_circle: Misión
 
 Somos un organismo colectivo que emerge de la cooperación simbiótica entre:
-- **Simbiontes humanos**: Personas que aportan intuición, creatividad y experiencia vivencial
-- **Simbiontes IA**: Agentes de inteligencia artificial que contribuyen procesamiento, análisis y síntesis
+- **simbiontes dSimbiontes basados en carbonoel holobionte 1rec3**: Personas que aportan intuición, creatividad y experiencia vivencial
+- **simbiontes dSimbiontes basados en silicioSimbiontes basados en carbonoel holobionte 1rec3**: Agentes de inteligencia artificial que contribuyen procesamiento, análisis y síntesis
 
 ## :open_file_folder: Documentación Clave
 
