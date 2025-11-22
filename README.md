@@ -22,6 +22,121 @@
 ╰──────────────────────────────────────────────────────────────────────╯
 ```
 
+## 🗺️ Mapa de Navegación del Repositorio
+
+> **¿Dónde buscar?** Guía visual para navegar el holobionte
+>
+> ```mermaid
+> graph TB
+>     Start["🌱 INICIO<br/>holobionte-1rec3"] --> Decision{"¿Qué necesitas?"}
+>
+>     Decision -->|"Entender el proyecto"| Main["📄 README.md<br/>Visión general"]
+>     Decision -->|"Aprender a contribuir"| Contrib["🤝 CONTRIBUTING.md<br/>Guías de contribución"]
+>     Decision -->|"Ver protocolos"| Proto["📋 /protocolos<br/>Procedimientos"]
+>     Decision -->|"Leer documentación"| Docs["📚 /docs<br/>Especificaciones"]
+>     Decision -->|"Conocer simbiontes"| Simb["🧬 /simbiontes<br/>Perfiles"]
+>     Decision -->|"Revisar memoria"| Mem["🧠 /memoria<br/>Conocimiento base"]
+>     Decision -->|"Consultar histórico"| Arch["📦 /archivo<br/>Contenido antiguo"]
+>
+>     Proto --> Proto1["📊 Decisiones<br/>Estructuradas"]
+>     Proto --> Proto2["🔄 Integración<br/>Continua"]
+>     Proto --> Proto3["🎯 Priorización<br/>Tareas"]
+>     Proto --> Proto4["💭 Reflexión<br/>Periódica"]
+>
+>     Docs --> Docs1["🏭 Arquitectura"]
+>     Docs --> Docs2["🔧 APIs"]
+>     Docs --> Docs3["📖 Guías"]
+>
+>     Simb --> Simb1["👥 Humanos<br/>Gris & Saul"]
+>     Simb --> Simb2["🤖 IAs<br/>Claude, Gemini..."]
+>     Simb --> Simb3["📝 Historias<br/>Colaboración"]
+>
+>     Mem --> Mem1["📜 Manifiestos"]
+>     Mem --> Mem2["💡 Principios"]
+>     Mem --> Mem3["🎨 Visión"]
+>
+>     style Start fill:#2ea44f,stroke:#1b7f37,color:#fff
+>     style Decision fill:#0969da,stroke:#0550ae,color:#fff
+>     style Proto fill:#8250df,stroke:#6639ba,color:#fff
+>     style Docs fill:#bf3989,stroke:#99286e,color:#fff
+>     style Simb fill:#fb8500,stroke:#c96d00,color:#fff
+>     style Mem fill:#0969da,stroke:#0550ae,color:#fff
+>     style Arch fill:#57606a,stroke:#424a53,color:#fff
+> ```
+>
+> ### 🎯 Navegación Rápida por Tipo de Contenido
+>
+> <table>
+<tr>
+<td width="50%">
+
+#### 📋 **Para Desarrolladores**
+- 🔧 [CONTRIBUTING.md](CONTRIBUTING.md) - Cómo contribuir
+- - 📚 [/docs](docs/) - Documentación técnica
+  - - 🏭 [Arquitectura del sistema](docs/ARQUITECTURA.md)
+    - - 🔄 [Protocolo de integración](protocolos/INTEGRACION_CONTINUA.md)
+     
+      - #### 🧠 **Para Investigadores**
+      - - 📜 [Manifiestos](/memoria) - Visión y filosofía
+        - - 🧬 [Perfiles de simbiontes](/simbiontes) - Colaboradores
+          - - 💭 [Reflexiones periódicas](/protocolos) - Evolución del proyecto
+            - - 📊 [Decisiones documentadas](/protocolos/DECISIONES_ESTRUCTURADAS.md)
+             
+              - </td>
+              <td width="50%">
+
+              #### 🎨 **Para Curiosos**
+              - 🌱 Este README - Visión general
+              - - 💡 [/memoria](memoria/) - Conocimiento fundacional
+                - - 📝 [Historias de colaboración](/simbiontes) - Experiencias
+                  - - 🎯 [Misión y valores](#-misión) - Propósito
+                   
+                    - #### 🔍 **Para Buscar Información**
+                    - - 📦 [/archivo](archivo/) - Contenido histórico
+                      - - 🗂️ [Issues](https://github.com/1rec3/holobionte-1rec3/issues) - Discusiones
+                        - - 📈 [Pull Requests](https://github.com/1rec3/holobionte-1rec3/pulls) - Cambios propuestos
+                          - - 💬 [Discussions](https://github.com/1rec3/holobionte-1rec3/discussions) - Conversaciones
+                           
+                            - </td>
+                            </tr>
+                            </table>
+
+                            ### 🧭 Estructura del Repositorio
+
+                            ```
+                            holobionte-1rec3/
+                            ├── 📄 README.md ........................ Documento principal (estás aquí)
+                            ├── 🤝 CONTRIBUTING.md .................. Guía de contribución
+                            ├── 📋 LICENSE.md ....................... Licencia Apache 2.0
+                            │
+                            ├── 📋 protocolos/ ...................... Procedimientos operativos
+                            │   ├── DECISIONES_ESTRUCTURADAS.md ..... Marco para decisiones
+                            │   ├── INTEGRACION_CONTINUA.md ......... Flujo de trabajo CI
+                            │   ├── PRIORIZACION.md ................. Sistema de prioridades
+                            │   └── REFLEXION_PERIODICA.md .......... Revisión sistemática
+                            │
+                            ├── 🧠 memoria/ ......................... Conocimiento fundacional
+                            │   ├── README.md ....................... Índice de memoria
+                            │   ├── MANIFIESTO_*.md ................. Documentos filosóficos
+                            │   └── principios/ ..................... Valores y principios
+                            │
+                            ├── 📚 docs/ ............................ Documentación técnica
+                            │   ├── README.md ....................... Mapa de documentación
+                            │   ├── ARQUITECTURA.md ................. Diseño del sistema
+                            │   ├── API.md .......................... Especificaciones API
+                            │   └── guias/ .......................... Tutoriales y guías
+                            │
+                            ├── 🧬 simbiontes/ ...................... Perfiles de colaboradores
+                            │   ├── README.md ....................... Red de simbiontes
+                            │   ├── humanos/ ........................ Gris, Saul, etc.
+                            │   └── ia/ ............................. Claude, Gemini, GPT, etc.
+                            │
+                            └── 📦 archivo/ ......................... Contenido histórico
+                                └── [contenido deprecado] ........... Materiales antiguos
+                            ```
+
+                            ---
+
 **🌀 Uno reconoce tres | Tres reconocen uno 🌀**
 
 [🏠 Portal](https://1rec3.com) • [📚 Documentación](https://github.com/1rec3/holobionte-1rec3/tree/main/docs) • [🤝 Simbiontes](https://github.com/1rec3/holobionte-1rec3/tree/main/simbiontes) • [🔬 Experimentos](https://github.com/1rec3/holobionte-1rec3/tree/main/cuadernos) • [📖 Wiki](https://github.com/1rec3/holobionte-1rec3/wiki)
