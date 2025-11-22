@@ -1,0 +1,31 @@
+# robots.txt para 1rec3.com - Holobionte
+# Permitir el rastreo completo de todos los recursos
+
+User-agent: *
+Allow: /
+
+# Permitir rastreo de recursos específicos
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Indicar la ubicación del sitemap
+Sitemap: https://1rec3.com/sitemap.xml
+
+# Configuración específica para buscadores principales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Tiempo de espera entre solicitudes (opcional, en segundos)
+Crawl-delay: 1
