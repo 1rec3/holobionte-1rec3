@@ -1,0 +1,35 @@
+holobionte:
+  name: "1rec3 Distributed"
+  
+  nodes:
+    current:
+      name: "ASUS-ROG-Hub"
+      role: "edge_device"
+      hardware:
+        cpu: "Ryzen AI 9 HX 370"
+        gpu: "Radeon 890M"
+        npu: "XDNA 50 TOPS"
+        ram: "32GB"
+      models:
+        - "deepseek-r1:32b"
+    
+    future:
+      name: "Threadripper-Master"
+      role: "main_hub"
+      hardware:
+        cpu: "Threadripper PRO 7980X (96 cores)"
+        gpu: ["RTX 6000 Ada", "RTX 4090", "H100"]
+        npu: "Alveo V80"
+        ram: "768GB"
+      models:
+        - "deepseek-r1:70b"
+        - "llama-3.1:405b"
+        - "qwen:72b"
+  
+  network:
+    current: "WiFi 6E"
+    future: "10GbE → 40GbE"
+  
+  scaling:
+    phase: 0
+    target_tops: [50, 4868, 15000]

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuAndi - Holobionte NERAL</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+        
+        /* Sidebar con imagen fondo */
+        .sidebar {
+            width: 320px;
+            background: linear-gradient(135deg, rgba(26, 85, 74, 0.95), rgba(14, 40, 58, 0.95)),
+                        url('assets/images/forest-bg.jpg') center/cover;
+            border-right: 1px solid rgba(50, 184, 198, 0.3);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/neural-pattern.jpg') center/cover;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #32b8c6, #1a554a);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 8px 24px rgba(50, 184, 198, 0.4);
+            position: relative;
+        }
+        
+        .logo-icon::after {
+            content: '🌿';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: 24px;
+        }
+        
+        .logo-text h1 {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .logo-text p {
+            color: rgba(50, 184, 198, 0.9);
+            font-size: 13px;
+            font-weight: 500;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Stats cards con glassmorphism */
+        .stats {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            border-radius: 14px;
+            padding: 16px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(50, 184, 198, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-value {
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .stat-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .stat-indicator.ok { 
+            background: #32b8c6; 
+            box-shadow: 0 0 12px #32b8c6;
+            animation: pulse-glow 2s infinite;
+        }
+        
+        .stat-indicator.pending { 
+            background: #f59e0b;
+            box-shadow: 0 0 8px #f59e0b;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        /* Holobionte concept */
+        .concept {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .concept-title {
+            color: #32b8c6;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .concept-text {
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        
+        /* Commands */
+        .commands {
+            margin-top: auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .command-list {
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .command-list strong {
+            color: #32b8c6;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .command-list div {
+            margin: 6px 0;
+            opacity: 0.8;
+            padding-left: 12px;
+            position: relative;
+        }
+        
+        .command-list div::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #32b8c6;
+        }
+        
+        /* Main chat con background natural */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #0e2836 0%, #1a554a 100%);
+            position: relative;
+        }
+        
+        .main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/neural-pattern.jpg') center/cover;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        
+        .chat-header {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(12px);
+            padding: 24px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(50, 184, 198, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-title h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .header-subtitle {
+            font-size: 12px;
+            opacity: 0.7;
+            color: #32b8c6;
+        }
+        
+        .header-status {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 13px;
+            background: rgba(50, 184, 198, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(50, 184, 198, 0.3);
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #32b8c6;
+            box-shadow: 0 0 12px #32b8c6;
+            animation: pulse-glow 2s infinite;
+        }
+        
+        /* Messages area */
+        #messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .message {
+            margin: 16px 0;
+            display: flex;
+            gap: 14px;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            border: 2px solid rgba(50, 184, 198, 0.3);
+        }
+        
+        .message.user .message-avatar {
+            background: linear-gradient(135deg, #32b8c6, #1a554a);
+            color: white;
+        }
+        
+        .message.assistant .message-avatar {
+            background: url('assets/images/wolf-avatar.jpg') center/cover;
+            border-color: rgba(50, 184, 198, 0.5);
+        }
+        
+        .message-content {
+            max-width: 70%;
+            padding: 14px 18px;
+            border-radius: 18px;
+            line-height: 1.6;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .message.user .message-content {
+            background: linear-gradient(135deg, rgba(50, 184, 198, 0.9), rgba(26, 85, 74, 0.9));
+            color: white;
+            border: 1px solid rgba(50, 184, 198, 0.3);
+        }
+        
+        .message.assistant .message-content {
+            background: rgba(255,255,255,0.95);
+            color: #0e2836;
+            border: 1px solid rgba(50, 184, 198, 0.2);
+        }
+        
+        .message.system .message-content {
+            background: rgba(50, 184, 198, 0.1);
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            font-style: italic;
+            border: 1px solid rgba(50, 184, 198, 0.2);
+        }
+        
+        /* Input area */
+        .chat-input {
+            padding: 24px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(50, 184, 198, 0.2);
+            display: flex;
+            gap: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        #userInput {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid rgba(50, 184, 198, 0.3);
+            border-radius: 28px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.05);
+            color: white;
+        }
+        
+        #userInput::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        
+        #userInput:focus {
+            border-color: #32b8c6;
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 20px rgba(50, 184, 198, 0.3);
+        }
+        
+        .btn-send, .btn-voice {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 20px;
+        }
+        
+        .btn-send {
+            background: linear-gradient(135deg, #32b8c6, #1a554a);
+            color: white;
+            box-shadow: 0 4px 16px rgba(50, 184, 198, 0.4);
+        }
+        
+        .btn-send:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(50, 184, 198, 0.6);
+        }
+        
+        .btn-voice {
+            background: rgba(50, 184, 198, 0.15);
+            border: 2px solid #32b8c6;
+            color: #32b8c6;
+        }
+        
+        .btn-voice:hover {
+            background: rgba(50, 184, 198, 0.25);
+        }
+        
+        .btn-voice.recording {
+            background: #32b8c6;
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(50, 184, 198, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(50, 184, 198, 0); }
+        }
+        
+        /* Scrollbar */
+        #messages::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #messages::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+        }
+        
+        #messages::-webkit-scrollbar-thumb {
+            background: rgba(50, 184, 198, 0.5);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">N</div>
+            <div class="logo-text">
+                <h1>NuAndi</h1>
+                <p>Holobionte NERAL</p>
+            </div>
+        </div>
+        
+        <div class="concept">
+            <div class="concept-title">🌿 Concepto Holobionte</div>
+            <div class="concept-text">
+                Organismo distribuido que integra múltiples simbiontes (IA, humano, hardware) 
+                en una red colaborativa emergente.
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">CPU</div>
+                <div class="stat-value">
+                    <span class="stat-indicator ok"></span>
+                    <span id="cpu-stat">--</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">RAM</div>
+                <div class="stat-value">
+                    <span class="stat-indicator ok"></span>
+                    <span id="ram-stat">--</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">GPU Radeon 890M</div>
+                <div class="stat-value">
+                    <span class="stat-indicator ok"></span>
+                    <span id="gpu-stat">ROCm Active</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">NPU XDNA</div>
+                <div class="stat-value">
+                    <span class="stat-indicator pending"></span>
+                    <span id="npu-stat">50 TOPS Ready</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="commands">
+            <div class="command-list">
+                <strong>Comandos Disponibles</strong>
+                <div>/status</div>
+                <div>/list [filtro]</div>
+                <div>/read &lt;archivo&gt;</div>
+                <div>/browser &lt;url&gt;</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main chat -->
+    <div class="main">
+        <div class="chat-header">
+            <div class="header-title">
+                <h2>DeepSeek R1 8B</h2>
+                <div class="header-subtitle">Razonamiento profundo + GPU acelerada</div>
+            </div>
+            <div class="header-status">
+                <span class="status-dot"></span>
+                <span>Sistema Operativo</span>
+            </div>
+        </div>
+        
+        <div id="messages"></div>
+        
+        <div class="chat-input">
+            <button class="btn-voice" id="voiceBtn" title="Chat por voz (próximamente)">🎤</button>
+            <input type="text" id="userInput" placeholder="Escribe tu mensaje o comando..." />
+            <button class="btn-send" id="sendBtn">➤</button>
+        </div>
+    </div>
+    
+    <script src="renderer.js"></script>
+</body>
+</html>
