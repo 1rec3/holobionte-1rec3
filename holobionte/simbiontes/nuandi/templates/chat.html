@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuAndi - Holobionte NERAL</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar-container">
+                <div class="avatar pulse"></div>
+            </div>
+            <h1>NuAndi</h1>
+            <p class="subtitle">Orquestador Holobionte NERAL</p>
+            <div class="status">
+                <span class="status-dot"></span>
+                <span>GPU Radeon 890M • NPU XDNA • 32GB RAM</span>
+            </div>
+        </div>
+        
+        <div class="chat-container" id="chatContainer">
+            <div class="message system">
+                <div class="message-content">
+                    🤖 NuAndi operativo. Acceso a terminal, repositorio Git y LLM local.
+                </div>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Escribe tu mensaje..." autofocus>
+            <button id="sendButton">Enviar</button>
+        </div>
+    </div>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

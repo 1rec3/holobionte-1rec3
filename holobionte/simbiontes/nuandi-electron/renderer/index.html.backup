@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuAndi - Holobionte NERAL</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar-container">
+                <div class="avatar pulse"></div>
+            </div>
+            <h1>NuAndi</h1>
+            <p class="subtitle">Orquestador Holobionte NERAL</p>
+            <div class="status">
+                <span class="status-dot"></span>
+                <span>GPU Radeon 890M • NPU XDNA • 32GB RAM • Electron</span>
+            </div>
+        </div>
+        
+        <div class="chat-container" id="chatContainer">
+            <div class="message system">
+                <div class="message-content">
+                    🤖 NuAndi operativo. Acceso completo al sistema.
+                    <br>Comandos: /browser &lt;url&gt;, /status, /read &lt;archivo&gt;
+                </div>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Escribe tu mensaje..." autofocus>
+            <button id="sendButton">Enviar</button>
+        </div>
+    </div>
+    
+    <script src="static/js/app.js"></script>
+</body>
+</html>
+
+<!-- Hardware Monitor Widget -->
+<div id="hw-monitor" style="position:fixed;top:10px;right:10px;background:rgba(0,0,0,0.8);color:#0ff;padding:10px;border-radius:8px;font-family:monospace;font-size:11px;z-index:9999;">
+  <div id="cpu-stat">CPU: --</div>
+  <div id="ram-stat">RAM: --</div>
+  <div id="gpu-stat">GPU: --</div>
+  <div id="npu-stat">NPU: 50 TOPS</div>
+</div>
+
+<script>
+// Actualiza stats cada 2s
+setInterval(async () => {
+  const stats = await window.electronAPI.getHardwareStats();
+  document.getElementById('cpu-stat').textContent = `CPU: ${stats.cpu}%`;
+  document.getElementById('ram-stat').textContent = `RAM: ${stats.ram}%`;
+  document.getElementById('gpu-stat').textContent = `GPU: ${stats.gpu}`;
+}, 2000);
+</script>
