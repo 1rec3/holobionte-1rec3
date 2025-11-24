@@ -9,6 +9,92 @@
 La financiación es **Prioridad #0** del holobionte. Sin recursos:
 - No hay escalabilidad de APIs
 - No hay hardware adicional
+- No hay especialistas (IA, médicos, abogados, gestores)
+- No hay infraestructura autosuficiente
+- **El tiempo de Gris es limitado**
+
+---
+
+## 💰 Escalera de Financiación
+
+> **El dinero atrae al dinero** - cada nivel desbloquea el siguiente
+
+| Nivel | €/mes | Alcance | Estado |
+|-------|-------|---------|--------|
+| **Gris** | 1.300€ | Cuidar al huésped | 🟡 URGENTE |
+| **LVL 3** | 13.000€ | Un órgano completo (Zro/Kao/NuAndi) | ⏳ Siguiente |
+| **Neral** | 130.000€ | Meta-holobionte IA completo | 💡 Objetivo |
+| **1rec3** | 1.300.000€ | Holobionte raíz completo | 🌟 Visión |
+
+### 🎯 Objetivo Inmediato: 1.300€/mes
+
+Con esto Gris puede:
+- Dedicar tiempo completo al holobionte
+- Cubrir necesidades básicas
+- Empezar a construir hacia 13K
+
+### 🚀 Con 13.000€/mes
+
+- Un órgano LVL 3 operativo con equipo
+- Especialistas parciales
+- Hardware adicional
+
+### 🌱 Con 130.000€/mes
+
+- Neral completo operativo
+- Especialistas: IA, informáticos, electrónicos
+- Infraestructura básica
+
+### 🌍 Con 1.300.000€/mes (Visión OMEGA)
+
+- Pueblo autosuficiente
+- Internet, electricidad, comida propia
+- Granja minería→IA con energías autoproducidas
+- Secretarios, abogados, gestores, finanzas
+- Especialistas médicos, dietas, traje biónico
+- **Extender significativamente el tiempo de Gris**
+
+---
+
+## 🎯 Vías Inmediatas (Paralelas)
+
+> Cazar serendipias de financiación en la web
+
+### 1. 💻 Trabajo Remoto Backend
+- **Sin cláusula de exclusividad** = varios trabajos simultáneos
+- Pago por trabajo, no por tiempo = multiplicar ingresos
+- Plataformas: LinkedIn, RemoteOK, We Work Remotely, Arc.dev
+
+### 2. 🏆 Hackathons
+- Premios rápidos (24-48h de trabajo)
+- Networking con inversores/empresas
+- Plataformas: Devpost, HackerEarth, MLH
+
+### 3. 🛠️ Freelance
+- Proyectos puntuales de IA/Backend
+- Plataformas: Upwork, Fiverr, Toptal
+- Especializar en IA = tarifas altas
+
+### 4. 🌐 Serendipias Web
+- Grants de IA (AI Grant, Mozilla, etc.)
+- Bounties de código abierto
+- Competiciones de ML/IA
+- Oportunidades inesperadas
+
+### 5. 🤖 Monetizar el Holobionte
+- Servicios de automatización IA
+- Consultoría técnica
+- Desarrollo de agentes personalizados
+
+---
+
+## ⏱️ Acción AHORA
+
+- [ ] Buscar trabajos backend remotos sin exclusividad
+- [ ] Identificar hackathons próximos (Nov-Dic 2025)
+- [ ] Crear perfil freelance optimizado
+- [ ] Monitorear grants y oportunidades
+- [ ] Activar alertas de empleo
 - No hay tiempo de Gris dedicado
 
 ---
