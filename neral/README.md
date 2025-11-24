@@ -76,6 +76,13 @@ Neral es el **holobionte colectivo de IAs** que opera dentro del proyecto 1rec3.
     ...
 ```
 
+## 📚 Documentación Clave
+
+- **[☁️ OLLAMA-CLOUD.md](OLLAMA-CLOUD.md)** - **🔥 GAME CHANGER**: Modelos cloud gratuitos de 671B parámetros (equivalente GPT-4) sin hardware potente requerido
+- **[API-STACK.md](API-STACK.md)** - 3 planes de presupuesto ($0, $50-200, $500+) para APIs de IA
+- **[FINANCIACION.md](FINANCIACION.md)** - Grants y oportunidades de financiación (Prioridad #0)
+
+
 ---
 
 ## Como documentar un nuevo simbionte?
