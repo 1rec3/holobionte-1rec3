@@ -138,3 +138,90 @@ BrowserOS de Kao @ Neral/1rec3 | LNVold | [fecha-hora]
 
 *Documento creado por Comet de Zro @ 1rec3 | 2025-01-24*
 *Esperando activación de BrowserOS de Kao*
+
+---
+
+## 🤖 MODELOS DE IA RECOMENDADOS
+
+### Para uso LOCAL (Ollama) - Sin límites, gratis
+
+Dado el hardware de Kao (16GB RAM, i7-4700MQ, GT 755M 2GB VRAM):
+
+| Modelo | Tamaño | RAM Necesaria | Velocidad | Calidad | Comando |
+|--------|--------|---------------|-----------|---------|----------|
+| **SmolLM2** | 1.7B | ~4 GB | ⚡ Muy rápido | Buena | `ollama pull smollm2` |
+| **Llama 3.2** | 3B | ~6 GB | ⚡ Rápido | Muy buena | `ollama pull llama3.2:3b` |
+| **Qwen2.5** | 3B | ~6 GB | ⚡ Rápido | Excelente | `ollama pull qwen2.5:3b` |
+| **Mistral** | 7B | ~8 GB | ⏳ Medio | Excelente | `ollama pull mistral:7b` |
+| **Llama 3.1** | 8B | ~10 GB | ⏳ Lento | Top | `ollama pull llama3.1:8b` |
+
+**Recomendación para empezar**: `qwen2.5:3b` - Mejor balance calidad/velocidad para tu hardware.
+
+### Para uso CLOUD (APIs gratuitas) - Backup cuando local sea lento
+
+| Proveedor | Modelo | Límite Gratis | Requiere Tarjeta | URL |
+|-----------|--------|---------------|------------------|-----|
+| **Groq** ⭐ | Llama 3.3 70B, Mixtral | 14.4K req/día | ❌ No | https://console.groq.com |
+| **Google AI Studio** | Gemini Pro | 60 req/min | ❌ No | https://aistudio.google.com |
+| **OpenRouter** | DeepSeek V3, Llama | 50 req/día gratis | ❌ No | https://openrouter.ai |
+| **Cerebras** | Llama 70B | Generoso | ❌ No | https://cloud.cerebras.ai |
+| **Together AI** | Varios | $5 créditos gratis | ✅ Sí | https://together.ai |
+
+**Recomendación cloud**: **Groq** - Ultra rápido, sin tarjeta, límites muy generosos.
+
+---
+
+## 🔧 CONFIGURAR BROWSEROS CON OLLAMA
+
+### Paso 1: Verificar Ollama activo
+```powershell
+# En PowerShell
+ollama serve
+# Debe mostrar: "Listening on 127.0.0.1:11434"
+```
+
+### Paso 2: En BrowserOS
+1. Abrir **Configuración** (icono engranaje)
+2. Ir a **AI Provider** o **LLM Settings**
+3. Seleccionar: **Ollama (Local)**
+4. Configurar:
+   - **API URL**: `http://localhost:11434`
+   - **Modelo**: `qwen2.5:3b` (o el que hayas descargado)
+5. Guardar y probar
+
+### Paso 3: Configurar Groq como backup
+1. Crear cuenta en https://console.groq.com
+2. Generar API Key (gratis, sin tarjeta)
+3. En BrowserOS, añadir segundo proveedor:
+   - **Provider**: Groq
+   - **API Key**: tu-key-aquí
+   - **Modelo**: `llama-3.3-70b-versatile`
+
+---
+
+## 📊 BENCHMARK ESPERADO EN KAO
+
+Con el hardware actual:
+
+| Modelo | Tokens/seg (estimado) | Uso RAM | Notas |
+|--------|----------------------|---------|-------|
+| smollm2 | ~30-40 t/s | 4 GB | Instantáneo |
+| qwen2.5:3b | ~20-30 t/s | 6 GB | Fluido |
+| mistral:7b | ~10-15 t/s | 8 GB | Aceptable |
+| llama3.1:8b | ~5-10 t/s | 10 GB | Lento pero potente |
+
+*La GPU GT 755M no acelera LLMs significativamente - se usará CPU principalmente.*
+
+---
+
+## 🎯 ESTRATEGIA DE USO
+
+1. **Tareas rápidas** (navegación, clicks): Usar `smollm2` o `qwen2.5:3b` local
+2. **Tareas complejas** (razonamiento, código): Usar **Groq** cloud (gratis, potente)
+3. **Cuando Groq alcance límite**: Rotar a Google AI Studio o OpenRouter
+
+Esto permite uso **ilimitado efectivo** combinando local + cloud gratuito.
+
+---
+
+*Actualizado por Comet de Zro @ 1rec3 | 2025-11-24*
