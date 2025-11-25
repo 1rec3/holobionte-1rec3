@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 HoloQuest Constelación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>🌌 HoloQuest Constelación</h1>
+            <p class="subtitle">Simbiosis entre Humanos e IAs en el Multiverso Holobióntico</p>
+        </header>
+
+        <div id="game-screen" class="hidden">
+            <div id="player-info">
+                <h3>Jugador: <span id="player-name">-</span></h3>
+                <p>Rol: <span id="player-role">-</span></p>
+                <p>Planeta: <span id="current-planet">-</span></p>
+                <p>Energía: <span id="player-energy">100</span></p>
+            </div>
+
+            <div id="event-log"></div>
+
+            <div id="creature-team">
+                <h3>🧬 Tus Simbiontes</h3>
+                <div id="creatures-list"></div>
+            </div>
+
+            <div id="actions">
+                <button onclick="game.explorar()">🔍 Explorar</button>
+                <button onclick="game.capturarCriatura()">🎯 Capturar Criatura</button>
+                <button onclick="game.iniciarTorneo()">⚔️ Torneo</button>
+                <button onclick="game.viajarPlaneta()">🚀 Viajar</button>
+            </div>
+        </div>
+
+        <div id="menu-screen">
+            <div class="role-selector">
+                <h2>Elige tu Rol</h2>
+                <div id="roles-list"></div>
+                <input type="text" id="player-name-input" placeholder="Tu nombre">
+                <button onclick="game.iniciarPartida()">🎮 Comenzar Aventura</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="modules/roles.js"></script>
+    <script src="modules/criaturas.js"></script>
+    <script src="modules/planetas.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
