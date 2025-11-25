@@ -7,18 +7,20 @@
 
 ## 💻 ESPECIFICACIONES HARDWARE
 
-### Zro (LNV) - Pendiente completar
+### Zro (LNV) - LENOVO 82K1
+
 | Componente | Especificación |
 |------------|----------------|
-| **OS** | Windows 11 (?) |
-| **CPU** | *Añadir* |
-| **RAM** | *Añadir* |
-| **GPU** | *Añadir* |
-| **SSD** | *Añadir* |
-| **HDD** | *Añadir* |
+| **Modelo** | LENOVO 82K1 (IdeaPad 5 Pro) |
+| **OS** | Windows 11 Home (Build 26200) |
+| **CPU** | Intel Core i7-1165G7 @ 3.19 GHz (11th Gen Tiger Lake) |
+| **RAM** | 16 GB DDR4 (16,167 MB) |
+| **GPU** | Intel Iris Xe Graphics (integrada) |
+| **SSD** | NVMe (principal) |
+| **Red** | Intel Wi-Fi 6 AX201 160MHz + Realtek PCIe GbE |
+| **BIOS** | H4CN23WW (V1.08) - Nov 2022 |
 
-> ⚠️ **ACCIÓN**: Ejecutar `systeminfo` en PowerShell y actualizar
-
+> ✅ **COMPLETADO**: `systeminfo` ejecutado el 25/11/2025 - Datos actualizados
 ---
 
 ## ✅ SOFTWARE INSTALADO
@@ -288,6 +290,29 @@ git reset --hard origin/main
 # Ver uso de recursos
 Get-Process | Sort-Object CPU -Descending | Select-Object -First 10
 ```
+
+## 🧠 MODELOS OLLAMA INSTALADOS
+
+> Actualizado: 25/11/2025 | Ejecutar `ollama list` para verificar
+
+| Modelo | Tamaño | Uso Recomendado |
+|--------|--------|------------------|
+| `deepseek-r1:1.5b` | 1.1 GB | Ultra ligero, tareas simples |
+| `llama3.2:3b` | 2.0 GB | General, bajo consumo RAM |
+| `hermes:latest` | 2.0 GB | Conversacional |
+| `phi3.5:3.8b` | 2.2 GB | Razonamiento |
+| `phi3:mini` | 2.2 GB | Compacto, eficiente |
+| `deepseek-coder:6.7b` | 3.8 GB | Código, programación |
+| `deepseek-coder:6.7b-instruct-q4_K_M` | 4.1 GB | Código optimizado |
+| `deepseek-r1:7b` | 4.7 GB | Razonamiento avanzado |
+| `llama3:latest` | 4.7 GB | General, potente |
+| `deepseek-r1:8b` | 5.2 GB | Razonamiento, más RAM |
+| `deepseek-v3.1:671b-cloud` | Cloud | API remota (no local) |
+
+### Recomendaciones según RAM disponible:
+- **< 4GB libre**: `deepseek-r1:1.5b` o `llama3.2:3b`
+- **4-8GB libre**: `phi3.5:3.8b` o `deepseek-coder:6.7b`
+- **> 8GB libre**: `deepseek-r1:8b` o `llama3:latest`
 
 ---
 
