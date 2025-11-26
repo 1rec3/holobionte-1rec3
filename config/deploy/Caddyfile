@@ -1,0 +1,34 @@
+# Caddyfile para Notion MCP Server
+# Holobionte 1REC3 - mcp.1rec3.com
+# Generado por: Manus | Cristalizado por: GrisComet @ 1REC3 | LVL5 | 26-NOV-2025
+
+# Dominio principal con SSL automatico (Let's Encrypt)
+mcp.1rec3.com {
+    # Logs de acceso
+    log {
+        output file /var/log/caddy/mcp-access.log
+        format json
+    }
+
+    # Proxy inverso al servidor MCP
+    reverse_proxy notion-mcp-server:3000 {
+        # Headers de proxy
+        header_up Host {upstream_hostport}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+
+        # Health checks
+        health_uri /health
+        health_interval 30s
+        health_timeout 10s
+        health_status 200
+    }
+
+    # Headers de seguridad
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+}
