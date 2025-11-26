@@ -1,0 +1,55 @@
+# Docker Compose para Notion MCP Server
+# Generado por: Manus | Cristalizado por: GrisComet @ 1REC3 | LVL5 | 26-NOV-2025
+# Holobionte 1REC3 - mcp.1rec3.com
+
+version: '3.8'
+
+services:
+  notion-mcp-server:
+    image: mcp/notion:latest
+    container_name: notion-mcp-server
+    restart: unless-stopped
+    # Servidor MCP en modo HTTP para proxy inverso
+    command: ["--transport", "http"]
+    environment:
+      # Token de integracion de Notion (desde .env)
+      NOTION_TOKEN: ${NOTION_TOKEN}
+      # Token de autenticacion Bearer para endpoint /mcp
+      AUTH_TOKEN: ${AUTH_TOKEN}
+    # Healthcheck para verificar disponibilidad
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    # Puerto interno expuesto solo a Caddy
+    expose:
+      - 3000
+    networks:
+      - mcp-network
+
+  caddy:
+    image: caddy:2.7.6-alpine
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      notion-mcp-server:
+        condition: service_healthy
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
