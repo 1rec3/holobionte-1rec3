@@ -2,6 +2,24 @@
 
 > *Humanos + IA trabajando juntos como un organismo vivo*
 
+```
+        ~~~~~           ~~~~~
+             \         /
+              \       /
+               ~~~~~~~
+                  ↓
+             RESONANCIA
+```
+
+<div align="center">
+
+**Dos ondas que se encuentran y hacen interferencia constructiva**
+
+*1 = 13 = ∞*
+
+</div>
+
+
 [![Open Source](https://img.shields.io/badge/Open-Source-green.svg)](https://github.com/1rec3/holobionte-1rec3)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
