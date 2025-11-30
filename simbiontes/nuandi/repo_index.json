@@ -1,0 +1,142 @@
+{
+  "README.md": {
+    "type": ".md",
+    "size": 0,
+    "modified": "2025-11-22T19:13:44.717071"
+  },
+  "scripts/access-repo.js": {
+    "type": ".js",
+    "size": 526,
+    "modified": "2025-11-18T00:19:21.231202"
+  },
+  "holobionte/test_npu_benchmark.sh": {
+    "type": ".sh",
+    "size": 3245,
+    "modified": "2025-11-23T13:20:41.523482"
+  },
+  "holobionte/test_npu_llamacpp.sh": {
+    "type": ".sh",
+    "size": 1116,
+    "modified": "2025-11-23T13:20:41.523482"
+  },
+  "holobionte/check_hw.sh": {
+    "type": ".sh",
+    "size": 471,
+    "modified": "2025-11-23T13:27:30.606274"
+  },
+  "holobionte/docs/ARQUITECTURA_ESCALABLE.md": {
+    "type": ".md",
+    "size": 574,
+    "modified": "2025-11-23T13:20:41.520482"
+  },
+  "holobionte/docs/ESTADO_COMPLETO.md": {
+    "type": ".md",
+    "size": 820,
+    "modified": "2025-11-23T13:20:41.520482"
+  },
+  "holobionte/docs/ESTADO_NPU.md": {
+    "type": ".md",
+    "size": 610,
+    "modified": "2025-11-23T13:20:41.520482"
+  },
+  "holobionte/docs/NPU_STATUS.md": {
+    "type": ".md",
+    "size": 879,
+    "modified": "2025-11-23T13:20:41.520482"
+  },
+  "holobionte/docs/ROADMAP_THREADRIPPER.md": {
+    "type": ".md",
+    "size": 400,
+    "modified": "2025-11-23T13:20:41.521482"
+  },
+  "holobionte/simbiontes/nuandi/auto_improve.py": {
+    "type": ".py",
+    "size": 2414,
+    "modified": "2025-11-23T13:20:41.523482"
+  },
+  "holobionte/simbiontes/nuandi/device_discovery.py": {
+    "type": ".py",
+    "size": 945,
+    "modified": "2025-11-23T13:20:41.523482"
+  },
+  "holobionte/simbiontes/nuandi/nuandi.py": {
+    "type": ".py",
+    "size": 2115,
+    "modified": "2025-11-23T13:20:41.523482"
+  },
+  "holobionte/simbiontes/nuandi/orquestador.py": {
+    "type": ".py",
+    "size": 1190,
+    "modified": "2025-11-23T13:20:41.523482"
+  },
+  "holobionte/simbiontes/nuandi/test_nuandi.py": {
+    "type": ".py",
+    "size": 0,
+    "modified": "2025-11-23T13:20:41.524482"
+  },
+  "holobionte/simbiontes/nuandi/ui_server.py": {
+    "type": ".py",
+    "size": 2689,
+    "modified": "2025-11-23T13:20:41.524482"
+  },
+  "holobionte/simbiontes/nuandi/xdna_backend.py": {
+    "type": ".py",
+    "size": 1463,
+    "modified": "2025-11-23T13:20:41.524482"
+  },
+  "holobionte/simbiontes/nuandi/hardware_monitor.py": {
+    "type": ".py",
+    "size": 3221,
+    "modified": "2025-11-23T13:20:41.524482"
+  },
+  "holobionte/simbiontes/nuandi/repo_indexer.py": {
+    "type": ".py",
+    "size": 2650,
+    "modified": "2025-11-23T13:38:14.514403"
+  },
+  "holobionte/simbiontes/nuandi/repo_index.json": {
+    "type": ".json",
+    "size": 3483,
+    "modified": "2025-11-23T13:38:14.534900"
+  },
+  "holobionte/simbiontes/nuandi/static/js/app.js": {
+    "type": ".js",
+    "size": 2842,
+    "modified": "2025-11-23T13:20:41.523482"
+  },
+  "holobionte/simbiontes/nuandi-electron/package.json": {
+    "type": ".json",
+    "size": 366,
+    "modified": "2025-11-23T13:20:41.524482"
+  },
+  "holobionte/simbiontes/nuandi-electron/package-lock.json": {
+    "type": ".json",
+    "size": 30776,
+    "modified": "2025-11-23T13:20:41.586824"
+  },
+  "holobionte/simbiontes/nuandi-electron/preload.js": {
+    "type": ".js",
+    "size": 681,
+    "modified": "2025-11-23T13:40:54.648217"
+  },
+  "holobionte/simbiontes/nuandi-electron/main.js": {
+    "type": ".js",
+    "size": 6231,
+    "modified": "2025-11-23T13:40:54.646217"
+  },
+  "holobionte/simbiontes/nuandi-electron/renderer/renderer.js": {
+    "type": ".js",
+    "size": 2067,
+    "modified": "2025-11-23T13:40:54.647217"
+  },
+  "holobionte/simbiontes/nuandi-electron/renderer/static/js/app.js": {
+    "type": ".js",
+    "size": 2972,
+    "modified": "2025-11-23T13:20:41.586824"
+  },
+  "holobionte/config/distributed.yaml": {
+    "type": ".yaml",
+    "size": 738,
+    "modified": "2025-11-23T13:20:41.588480"
+  }
+}

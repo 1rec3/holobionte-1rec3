@@ -1,0 +1,16 @@
+{
+  "name": "nuandi-electron",
+  "version": "1.0.0",
+  "description": "NuAndi - Orquestador Holobionte NERAL",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging"
+  },
+  "keywords": ["AI", "LLM", "Holobionte"],
+  "author": "Saul (1rec3)",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.2.0"
+  }
+}
