@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Track F - Jobs</title>
+    <style>
+        :root { --primary: #00ff88; --accent: #00d9ff; --bg: #0a0e27; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Courier New', monospace; 
+            background: var(--bg); 
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .header {
+            background: rgba(0,255,136,0.1);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 { color: var(--primary); font-size: 28px; letter-spacing: 2px; }
+        .stats { display: flex; gap: 40px; }
+        .stat { text-align: center; }
+        .stat-value { font-size: 32px; font-weight: bold; color: var(--accent); }
+        .stat-label { font-size: 12px; color: #ffd60a; text-transform: uppercase; margin-top: 5px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .section {
+            background: rgba(26, 31, 58, 0.95);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        h2 { color: var(--primary); font-size: 16px; margin-bottom: 15px; text-transform: uppercase; }
+        input, select, textarea {
+            width: 100%;
+            background: rgba(0,255,136,0.05);
+            border: 1px solid rgba(0,255,136,0.2);
+            color: #e0e0e0;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            background: rgba(0,255,136,0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+        }
+        button:hover { background: rgba(0,255,136,0.2); box-shadow: 0 0 10px rgba(0,255,136,0.5); }
+        .app-item {
+            background: rgba(0,255,136,0.05);
+            border-left: 2px solid var(--primary);
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .app-company { font-weight: bold; color: var(--accent); font-size: 13px; }
+        .app-position { font-size: 11px; color: #e0e0e0; margin-top: 3px; }
+        .progress-bar { width: 100%; height: 30px; background: rgba(0,255,136,0.1); border-radius: 6px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #ffd60a 0%, var(--primary) 100%); display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>TRACK F - Job Applications</h1>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="total">0</div>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="pending">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="accepted">0</div>
+                    <div class="stat-label">Accepted</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="ctr">0%</div>
+                    <div class="stat-label">CTR</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="section">
+                <h2>Nueva Aplicación</h2>
+                <form id="form">
+                    <input type="text" id="company" placeholder="Empresa" required>
+                    <input type="text" id="position" placeholder="Posición" required>
+                    <input type="number" id="salary" placeholder="Salario (€)">
+                    <input type="url" id="url" placeholder="URL">
+                    <textarea id="notes" placeholder="Notas..."></textarea>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>Progreso</h2>
+                <label>Meta: 20-30 apps/semana</label>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress">0%</div>
+                </div>
+                <div style="font-size: 12px; color: #e0e0e0; margin-top: 10px;">
+                    <div>23-24 Nov: CV + Portfolio</div>
+                    <div style="margin-top: 5px;">25-26 Nov: Cover letters</div>
+                    <div style="margin-top: 5px;">27-29 Nov: 20-30 apps</div>
+                </div>
+            </div>
+
+            <div class="section" style="grid-column: 1 / -1;">
+                <h2>Aplicaciones</h2>
+                <div id="list" style="max-height: 300px; overflow-y: auto;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let apps = JSON.parse(localStorage.getItem('apps') || '[]');
+
+        function save() {
+            localStorage.setItem('apps', JSON.stringify(apps));
+        }
+
+        function update() {
+            const total = apps.length;
+            const pending = apps.filter(a => a.status === 'pending').length;
+            const accepted = apps.filter(a => a.status === 'accepted').length;
+            const ctr = total > 0 ? Math.round((accepted/total)*100) : 0;
+            
+            document.getElementById('total').textContent = total;
+            document.getElementById('pending').textContent = pending;
+            document.getElementById('accepted').textContent = accepted;
+            document.getElementById('ctr').textContent = ctr + '%';
+            
+            const progress = Math.min((total/30)*100, 100);
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('progress').textContent = Math.round(progress) + '%';
+            
+            document.getElementById('list').innerHTML = apps.map((a, i) => `
+                <div class="app-item">
+                    <div class="app-company">${a.company}</div>
+                    <div class="app-position">${a.position}${a.salary ? ' • €' + a.salary : ''}</div>
+                    <select onchange="apps[${i}].status=this.value;save();update()">
+                        <option value="pending" ${a.status==='pending'?'selected':''}>Pending</option>
+                        <option value="accepted" ${a.status==='accepted'?'selected':''}>Accepted</option>
+                    </select>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            apps.push({
+                company: document.getElementById('company').value,
+                position: document.getElementById('position').value,
+                salary: document.getElementById('salary').value,
+                url: document.getElementById('url').value,
+                date: new Date().toISOString(),
+                status: 'pending'
+            });
+            save();
+            update();
+            document.getElementById('form').reset();
+        });
+
+        update();
+    </script>
+</body>
+</html>
