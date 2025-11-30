@@ -1,0 +1,31 @@
+{
+  "positions": [
+    {
+      "id": 1,
+      "company": "GitLab",
+      "role": "Backend Engineer",
+      "salary": "€70k-120k",
+      "location": "Remote (EU-friendly)",
+      "link": "https://about.gitlab.com/jobs",
+      "source": "direct"
+    },
+    {
+      "id": 2,
+      "company": "Factorial",
+      "role": "Backend Engineer",
+      "salary": "€55k-85k",
+      "location": "Barcelona / Remote",
+      "link": "https://factorial.io/careers",
+      "source": "direct"
+    },
+    {
+      "id": 3,
+      "company": "RemoteOK",
+      "role": "Backend Engineer",
+      "salary": "€40k-90k",
+      "location": "Remote",
+      "link": "https://remoteok.io",
+      "source": "job_board"
+    }
+  ]
+}
