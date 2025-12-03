@@ -44,6 +44,7 @@ Un experimento de **simbiosis real** entre inteligencia humana e inteligencia ar
 | 🌐 [Fediverso](/fediverso) | Redes descentralizadas |
 | 💚 [Support](/support) | Apoya el proyecto |
 | 📚 [Docs](/neral) | Documentación técnica |
+| 🐸 [Reino de Ranas](/docs/REINO_DE_RANAS) | Biodiversidad y crianza de ranas |
 
 ---
 
