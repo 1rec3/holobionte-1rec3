@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bestiario RANUDOMIX8</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.header { text-align: center; color: white; margin-bottom: 30px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 10px; }
+.header h1 { font-size: 2.5em; margin-bottom: 10px; }
+.search-box { margin-bottom: 20px; display: flex; gap: 10px; }
+.search-box input, .search-box select { flex: 1; padding: 10px; border: none; border-radius: 5px; font-size: 1em; }
+.species-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+.species-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.species-card:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+.species-image { width: 100%; height: 200px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; }
+.species-info { padding: 20px; }
+.species-name { font-weight: bold; color: #333; font-size: 1.1em; margin-bottom: 5px; }
+.species-common { color: #666; font-size: 0.9em; margin-bottom: 10px; font-style: italic; }
+.status { display: inline-block; padding: 4px 8px; border-radius: 3px; font-size: 0.8em; margin-top: 10px; font-weight: bold; }
+.status.lc { background: #90EE90; } .status.vu { background: #FFD700; } .status.en { background: #FF8C00; color: white; }
+.clan-badge { display: inline-block; background: #667eea; color: white; padding: 4px 8px; border-radius: 3px; font-size: 0.75em; margin-top: 10px; margin-left: 5px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🐸 BESTIARIO RANUDOMIX8</h1>
+<p>Catálogo de Ranas Africanas</p>
+<p style="font-size: 0.9em; margin-top: 10px;">CC-BY-4.0 | Holobionte 1rec3</p>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Buscar especie...">
+<select id="filterClan"><option value="">Todos los Clanes</option>
+<option value="Gladiadores">Gladiadores</option>
+<option value="Alquimistas">Alquimistas</option>
+<option value="Arquitectos">Arquitectos</option>
+<option value="Cazadores">Cazadores</option>
+<option value="Druidas">Druidas</option>
+<option value="Exploradores">Exploradores</option>
+<option value="Guardianes">Guardianes</option>
+<option value="Historiadores">Historiadores</option>
+<option value="Ingenieros">Ingenieros</option>
+<option value="Jinetes">Jinetes</option>
+<option value="Kinesiotherapeutas">Kinesiotherapeutas</option>
+<option value="Lectores de Luz">Lectores de Luz</option>
+<option value="Músicos">Músicos</option>
+</select></div>
+<div class="species-grid" id="speciesGrid"></div>
+</div>
+<script>
+const species = [
+{name: 'Hyperolus viridiflavus', common: 'African Bullfrog', clan: 'Gladiadores', iucn: 'LC', size: '1-1.8 cm', habitat: 'West Africa - Guinea Ecuatorial', characteristics: 'Tree frog, territorial, 40+ call types, agile jumper'},
+{name: 'Chiromantis xerampelina', common: 'White-Tree Frog', clan: 'Alquimistas', iucn: 'LC', size: '5-7.5 cm', habitat: 'East & Central Africa', characteristics: 'Foam nesting, biopolymeric secretions, arboreal'},
+{name: 'Polypedates leucomystax', common: 'Asian Common Toad', clan: 'Arquitectos', iucn: 'LC', size: '3.5-4 cm', habitat: 'Tropical Africa', characteristics: 'Explosive breeder, invasive adaptability, synergistic ecology'},
+{name: 'Phrynobatrachus acridoides', common: 'Grass Frog', clan: 'Cazadores', iucn: 'LC', size: '1-1.3 cm', habitat: 'West African grasslands', characteristics: 'Terrestrial, rapid reproduction, predatory behavior'},
+{name: 'Hyperolius lateralis', common: 'Lateral Reed Frog', clan: 'Druidas', iucn: 'LC', size: '1.5-2 cm', habitat: 'Guinea Ecuatorial wetlands', characteristics: 'Symbiotic plant relationships, vocalization patterns, color adaptation'},
+{name: 'Arthroleptis stenodactylus', common: 'Stenodactyl Frog', clan: 'Exploradores', iucn: 'LC', size: '2.5-3.5 cm', habitat: 'Forest floors, Guinea Ecuatorial', characteristics: 'Noctural wanderer, miniaturized autonomy, trail-marking'},
+{name: 'Leptopelis vermiculatus', common: 'Tree Frog Guardian', clan: 'Guardianes', iucn: 'LC', size: '2-3 cm', habitat: 'Forest canopy', characteristics: 'Territorial guardian, mutualistic partnerships, defense mechanisms'},
+{name: 'Bufo marinus', common: 'Cane Toad Historian', clan: 'Historiadores', iucn: 'LC', size: '10-25 cm', habitat: 'Tropical regions', characteristics: 'Granular skin, toxin production, ecological memory'},
+{name: 'Ptychadena mascareniensis', common: 'Grassland Frog', clan: 'Ingenieros', iucn: 'LC', size: '2.5-5 cm', habitat: 'Open grasslands', characteristics: 'Engineering burrows, structural adaptation, acoustic signals'},
+{name: 'Hyperolius argus', common: 'Silver Tree Frog', clan: 'Jinetes', iucn: 'LC', size: '1.2-1.8 cm', habitat: 'Vegetation near water', characteristics: 'Fast jumper, riding vegetation, synchronized calls'},
+{name: 'Xenopus tropicalis', common: 'Tropical Clawed Frog', clan: 'Kinesiotherapeutas', iucn: 'LC', size: '4.5-6 cm', habitat: 'Warm tropical waters', characteristics: 'Aquatic specialist, healing properties, therapeutic vocalizations'},
+{name: 'Afrixalus dorsalis', common: 'Striped Leaf Frog', clan: 'Lectores de Luz', iucn: 'LC', size: '1.5-2.5 cm', habitat: 'Forest leaves, Guinea Ecuatorial', characteristics: 'Photoreceptive skin, UV sensitivity, bioluminescent behavior'},
+{name: 'Hyperolius marmoratus', common: 'Marbled Frog Musician', clan: 'Músicos', iucn: 'LC', size: '1.5-2 cm', habitat: 'Wetlands, chorus areas', characteristics: 'Complex vocalizations, harmonic resonance, acoustic artistry'}
+];
+
+function renderSpecies() {
+const grid = document.getElementById('speciesGrid');
+grid.innerHTML = '';
+species.forEach(sp => {
+const card = document.createElement('div');
+card.className = 'species-card';
+card.innerHTML = `
+<div class="species-image">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="35" r="25" fill="#2ecc71" opacity="0.8"/>
+<ellipse cx="40" cy="30" rx="8" ry="12" fill="#27ae60"/>
+<ellipse cx="60" cy="30" rx="8" ry="12" fill="#27ae60"/>
+<circle cx="35" cy="50" r="18" fill="#2ecc71" opacity="0.9"/>
+<circle cx="65" cy="50" r="18" fill="#2ecc71" opacity="0.9"/>
+<ellipse cx="50" cy="75" rx="20" ry="15" fill="#1abc9c" opacity="0.9"/>
+<circle cx="50" cy="25" r="4" fill="#000"/>
+</svg>
+</div>
+<div class="species-info">
+<div class="species-name">${sp.name}</div>
+<div class="species-common">${sp.common}</div>
+<div class="species-details">
+<div><strong>Hábitat:</strong> ${sp.habitat}</div>
+<div><strong>Tamaño:</strong> ${sp.size}</div>
+<div><strong>Características:</strong> ${sp.characteristics}</div>
+</div>
+<span class="status lc">IUCN: ${sp.iucn}</span>
+<span class="clan-badge">${sp.clan}</span>
+</div>
+`;
+grid.appendChild(card);
+});
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+const query = e.target.value.toLowerCase();
+const filtered = species.filter(s => s.name.toLowerCase().includes(query) || s.common.toLowerCase().includes(query));
+const grid = document.getElementById('speciesGrid');
+grid.innerHTML = '';
+filtered.forEach(sp => {
+const card = document.createElement('div');
+card.className = 'species-card';
+card.innerHTML = `<div class="species-image"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="25" fill="#2ecc71" opacity="0.8"/></svg></div><div class="species-info"><div class="species-name">${sp.name}</div><div class="species-common">${sp.common}</div><span class="status lc">IUCN: ${sp.iucn}</span><span class="clan-badge">${sp.clan}</span></div>`;
+grid.appendChild(card);
+});
+});
+
+document.getElementById('filterClan').addEventListener('change', (e) => {
+const clan = e.target.value;
+const filtered = clan ? species.filter(s => s.clan === clan) : species;
+const grid = document.getElementById('speciesGrid');
+grid.innerHTML = '';
+filtered.forEach(sp => {
+const card = document.createElement('div');
+card.className = 'species-card';
+card.innerHTML = `<div class="species-image"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="25" fill="#2ecc71" opacity="0.8"/></svg></div><div class="species-info"><div class="species-name">${sp.name}</div><div class="species-common">${sp.common}</div><span class="status lc">IUCN: ${sp.iucn}</span><span class="clan-badge">${sp.clan}</span></div>`;
+grid.appendChild(card);
+});
+});
+
+renderSpecies();
+</script>
+</body>
+</html>
